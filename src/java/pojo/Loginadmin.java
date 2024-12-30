@@ -73,4 +73,4 @@ public class Loginadmin  implements java.io.Serializable {
 
 }
 
-
+//Batagor kantin
