@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Page Booking Luxury - GHS Hotel</title>
+    </h:head>
+    <h:body>
+        <nav class="navbar">
+            <h:form>
+                <h:commandLink action="index" class="logo">
+                    <img src="image/ghs.png" alt="logo store" class="logo"/>
+                </h:commandLink>
+            </h:form>
+            <div>
+                <h:form>
+                    <h:commandLink action="index" class="nav-item" value="Home"></h:commandLink>
+                    <h:commandLink action="loginadmin" class="nav-item" value="Login Admin" style="margin-right: 64px;"></h:commandLink>
+                </h:form>
+            </div>
+        </nav>
+
+        <h:form>
+            <f:event type="preRenderView" listener="#{orderData.setLuxuryPackage}"/>
+            <div class="border">
+                <h2>Fill Out The Form - Luxury Package</h2>
+                <p>Full Name</p>
+                <h:inputText value="#{orderData.name}" id="fullname" class="form-text" />
+                <p>Email</p>
+                <h:inputText value="#{orderData.email}" id="email" class="form-text" />
+                <p>No Handphone</p>
+                <h:inputText value="#{orderData.noTelp}" id="noTelp" class="form-text" />
+                <p>Booking Date</p>
+                <p:calendar id="startDate" value="#{orderData.checkInDate}" />
+                <p>Choose Booking Time</p>
+                <h:selectOneMenu value="#{orderData.bookingTime}" id="bookingTime" class="form-selected">
+                    <f:selectItem itemValue="10:00" itemLabel="10:00"/>
+                    <f:selectItem itemValue="11:00" itemLabel="11:00"/>
+                    <f:selectItem itemValue="13:00" itemLabel="13:00"/>
+                    <f:selectItem itemValue="14:00" itemLabel="14:00"/>
+                    <f:selectItem itemValue="15:00" itemLabel="15:00"/>
+                    <f:selectItem itemValue="16:00" itemLabel="16:00"/>
+                    <f:selectItem itemValue="17:00" itemLabel="17:00"/>
+                    <f:selectItem itemValue="18:00" itemLabel="18:00"/>
+                    <f:selectItem itemValue="19:00" itemLabel="19:00"/>
+                    <f:selectItem itemValue="20:00" itemLabel="20:00"/>
+                </h:selectOneMenu>
+                <h:message for="bookingTime" style="color:red"/>
+                <h:commandButton class="bt-submit" value="Submit" action="#{orderData.add_dataorder}"/>
+            </div>
+        </h:form>
+
+        <footer>
+            <div class="footerfield">
+                <h3>ABOUT US</h3>
+                <p>Check our social media on Facebook, Twitter, and Youtube. 
+                Don't forget to follow, subscribe, and like our feeds.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com" class="fab fa-facebook-f"></a>
+                    <a href="https://www.twitter.com" class="fab fa-twitter"></a>
+                    <a href="https://www.youtube.com" class="fab fa-youtube"></a>
+                </div>
+            </div>
+        </footer>
+    </h:body>
+</html>

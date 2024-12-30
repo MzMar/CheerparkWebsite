@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+ <title>Facelet Title</title>
+          <link rel="stylesheet" href="styles.css"/>
+        <link rel="icon" href="image/ghs.png" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+    <script src="https://kit.fontawesome.com/a8a97d8a4d.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+        <nav class="navbar">
+            <h:form>
+                <h:commandLink action="index" class="logo">
+                     <img src="image/ghs.png" alt="logo store" class="logo"/>
+                </h:commandLink>
+            </h:form>
+            <div>
+                <h:form>
+                    <h:commandLink action="index" class="nav-item" value="Home"></h:commandLink>
+                    <h:commandLink action="login" class="nav-item" value="Login"></h:commandLink>
+                    <h:commandLink action="signup" class="nav-item" value="Sign Up" style="margin-right: 64px;"></h:commandLink>
+                </h:form>
+            </div>
+            </nav>
+            
+            <h:form> onsubmit="return validationsignup()"
+                <div class="border-login">
+    <div class="row-login0">
+        <h1>SIGN UP</h1>
+    </div>
+    <div class="row-login">
+        <h3>Name</h3>
+        <h:inputText value="" id="name" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+    <div class="row-login">
+        <h3>Username</h3>
+        <h:inputText value="" id="username" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+    <div class="row-login">
+        <h3>E-Mail</h3>
+        <h:inputText value="" id="login" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+    <div class="row-login">
+        <h3>Phone Number</h3>
+        <h:inputText value="" id="phonenumber" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+    
+    <div class="row-login">
+        <h3>Date of Birth</h3>
+        <h:inputText value="" id="dateofbirth" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+    <div class="row-login">
+        <h3>Password</h3>
+        <h:inputSecret value="" id="password" required="true" requiredMessage="(joko)" class="form-text"/>
+    </div>
+                    
+    <div class="btsubmit">
+        <h:commandButton class="bt-submit" value="SIGN UP" action="sukses"/>
+    </div>
+    <div class="row-login">
+        <p>Already have an account? <a href="login.xhtml" class="txta-row">Login Now!</a></p>
+    </div>
+    </div>
+    </h:form>
+        
+        
+         <!--Footer-->
+        <footer>
+            <div class="footerfield">
+                <div class="footer-wrapper">
+                    <h3>ABOUT US</h3>
+                    <p>Check our social media on Facebook, Twitter, and Youtube. 
+                    Don't forget to follow, subscribe, and like our feeds.</p>
+                    <div class= "social-media">
+                        <h:form>
+                            <h:commandLink action="#" class="fab fa-facebook-f"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-twitter"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-youtube"></h:commandLink>
+                        </h:form>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>OUR ROOMS</h4>
+                    <h:form>
+                        <h:commandLink action="pagestandart" class="nav-item" value="STANDART"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pageduluxe" class="nav-item" value="DULUXE"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pageluxury" class="nav-item" value="LUXURY"></h:commandLink>
+                    </h:form>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>ABOUT</h4>
+                    <h:form>
+                    <h:commandLink action="#" class="nav-item" value="FAQ"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Get Inspired"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Blog"></h:commandLink>
+                    </h:form>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>    
+    </h:body>
+</html>
+

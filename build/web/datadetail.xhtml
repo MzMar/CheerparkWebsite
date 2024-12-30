@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Data Detail - GHS Hotel</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="icon" href="image/ghs.png" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://kit.fontawesome.com/a8a97d8a4d.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+    <!--Navbar-->
+        <nav class="navbar">
+            <h:form>
+                <h:commandLink action="indexadmin" class="logo">
+                    <img src="image/ghs.png" alt="logo store" class="logo"/>
+                </h:commandLink>
+            </h:form>
+            <div>
+                <h:form>
+                    <h:commandLink action="indexadmin" class="nav-item" value="Home"/>
+                    <h:commandLink action="orderdata" class="nav-item" value="Data"/>
+                    <h:commandLink action="index" class="nav-item" value="Log Out" style="margin-right: 64px;"/>
+                </h:form>
+            </div>
+        </nav> 
+    <br/><br/><br/><br/><br/><br/>
+    <br/>
+    
+    <!--Tabel Data-->
+<div class="borderdata1">
+    <div class="row-5">
+        <h:form>
+            <h1>Data Detail!</h1><br/><br/>
+            <p>Order ID</p><h:inputText value="#{orderData.orderId}" class="data-field"/><br/><br/>
+            <p>Name</p><h:inputText value="#{orderData.name}" class="data-field"/><br/><br/>
+            <p>Email</p><h:inputText value="#{orderData.email}" class="data-field"/><br/><br/>
+            <p>No Handphone</p><h:inputText value="#{orderData.noTelp}" class="data-field"/><br/><br/>
+            <p>Check In Date</p>
+            <h:inputText value="#{orderData.checkInDate}" class="data-field">
+                <f:convertDateTime pattern="yyyy-MM-dd"/>
+            </h:inputText>
+            <br/><br/>
+            <p>Booking Time</p>
+            <h:inputText value="#{orderData.bookingTime}" class="data-field">
+<!--                <f:convertDateTime/>-->
+            </h:inputText>
+            <br/><br/>
+            <p>barber</p><h:inputText value="#{orderData.barber}" class="data-field"/><br/><br/>
+            <p>Paket</p>
+            <h:inputText value="#{orderData.paket}" class="data-field"/>
+            <!--<h:inputHidden  />-->
+            <br/><br/>
+            <h:commandButton value="cancel" action="orderdata" class="bt-search"/>
+            <h:commandButton value="edit" action="#{orderData.edit()}" class="bt-search"/>
+            <h:commandButton value="delete" action="#{orderData.delete()}" class="bt-search"/>
+        </h:form>
+    </div>
+</div>  
+
+         
+    <!--Footer-->
+        <footer>
+            <div class="footerfield">
+                <div class="footer-wrapper">
+                    <h3>ABOUT US</h3>
+                    <p>Check our social media on Facebook, Twitter, and Youtube. 
+                    Don't forget to follow, subscribe, and like our feeds.</p>
+                    <div class="social-media">
+                        <h:form>
+                            <h:commandLink action="#" class="fab fa-facebook-f"/>
+                            <h:commandLink action="#" class="fab fa-twitter"/>
+                            <h:commandLink action="#" class="fab fa-youtube"/>
+                        </h:form>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>OUR PACKAGE</h4>
+                    <h:form>
+                        <h:commandLink action="pagestandart" class="nav-item" value="STANDARD"/>
+                        <h:commandLink action="pagedeluxe" class="nav-item" value="VIP"/>
+                        <h:commandLink action="pageluxury" class="nav-item" value="VVIP"/>
+                    </h:form>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>ABOUT</h4>
+                    <h:form>
+                        <h:commandLink action="#" class="nav-item" value="FAQ"/>
+                        <h:commandLink action="#" class="nav-item" value="Get Inspired"/>
+                        <h:commandLink action="#" class="nav-item" value="Blog"/>
+                    </h:form>
+                </div>
+            </div>
+        </footer>
+
+    <script src="script.js"></script>
+    </h:body>
+</html>

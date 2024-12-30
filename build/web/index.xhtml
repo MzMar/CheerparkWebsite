@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Home Page - Warehouse Management</title>
+        <link rel="icon" href="image/jpg.png" />
+        <link rel="stylesheet" href="styles_1.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://kit.fontawesome.com/a8a97d8a4d.js" crossorigin="anonymous"></script>
+    </h:head>
+    <h:body>
+
+    <!--Navbar-->
+   <nav class="navbar">
+    <h:form>
+        <h:commandLink action="index" class="logo">
+             <img src="image/ghs.png" alt="logo store" class="logo"/>
+        </h:commandLink>
+    </h:form>
+    <div>
+        <h:form>
+            <h:commandLink action="index" class="nav-item" value="Home"></h:commandLink>
+            <h:commandLink action="loginadmin" class="nav-item" value="Login Admin" style="margin-right: 64px;"></h:commandLink>
+        </h:form>
+    </div>
+   </nav> 
+    <br/><br/><br/>
+    <div class="wallpaper">
+        <br/>
+        <br/>
+        <br/>
+        <div class="title">
+             <img src="image/ghs.png" alt="logo store" class="logo-1"/>
+            <h1>
+                - CHEERPARK -
+            </h1>
+        </div>
+    </div>
+  
+    <div class="row">
+        <h2>AT Cheerpark City, Lampung</h2>
+        <p>Cheerpark City is a lively amusement park designed to offer 
+            visitors an unforgettable experience filled with fun, excitement, 
+            and adventure. The park features a wide variety of attractions for all ages, 
+            from thrilling roller coasters and adrenaline-pumping rides to family-friendly 
+            carousels and interactive play areas. With themed zones that bring different worlds 
+            to life, Cheerpark City blends entertainment with immersive storytelling, creating a 
+            magical atmosphere. Visitors can also enjoy live performances, indulge in delicious treats 
+            at food stalls, and explore vibrant shops. Whether seeking high-energy fun or a relaxing day out,
+            Cheerpark City is the perfect destination for entertainment and memories.</p>
+    </div>
+    
+    <!--Carousel-->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 5</div>
+                <img src="image/Depan_Luxury.jpg" style="width:1150px"/>
+        </div>  
+    </div>
+    <br/>
+    
+    <div style="text-align:center">
+        <span class="dot" ></span>   
+    </div>
+    <br/>
+    
+    
+    <!--Table Game Card-->
+    <h:form>
+        <table class="table-card">
+            <tr>
+                <td class="card">
+                    <h:commandLink action="pagestandart" class="field">
+                        <img src="image/Depan_Standart.png" alt="pagestandart" class="imgfield"/>
+                        <h1 class="txth1">STANDARD</h1>
+                    </h:commandLink>
+                </td>
+                <td class="card">
+                    <h:commandLink action="pagedeluxe" class="field">
+                        <img src="image/Depan_Standart.png" alt="pagedeluxe" class="imgfield"/>
+                        <h1 class="txth1">VIP</h1>
+                    </h:commandLink>
+                </td>
+                <td class="card">
+                    <h:commandLink action="pageluxury" class="field">
+                        <img src="image/Depan_Luxury.jpg" alt="pageluxury" class="imgfield"/>
+                        <h1 class="txth1">VVIP</h1>
+                    </h:commandLink>
+                </td>
+            </tr>
+        </table>
+    </h:form>
+<!--        <div class="btbooking">
+            <h:form>
+                <h:commandButton class="bt-booking" value="BOOK NOW" action="pagebooking"/>
+            </h:form>
+        </div>-->
+        <br/>
+        <br/>
+        <br/>
+        
+    <!--Footer-->
+        <footer>
+            <div class="footerfield">
+                <div class="footer-wrapper">
+                    <h3>ABOUT US</h3>
+                    <p>Check our social media on Facebook, Twitter, and Youtube. 
+                    Don't forget to follow, subscribe, and like our feeds.</p>
+                    <div class= "social-media">
+                        <h:form>
+                            <h:commandLink action="#" class="fab fa-facebook-f"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-twitter"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-youtube"></h:commandLink>
+                        </h:form>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>OUR PACKAGE</h4>
+                    <h:form>
+                        <h:commandLink action="pagestandart" class="nav-item" value="STANDARD"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pagedeluxe" class="nav-item" value="VIP"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pageluxury" class="nav-item" value="VVIP"></h:commandLink>
+                    </h:form>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>ABOUT</h4>
+                    <h:form>
+                    <h:commandLink action="#" class="nav-item" value="FAQ"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Get Inspired"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Blog"></h:commandLink>
+                    </h:form>
+                </div>
+            </div>
+        </footer>
+
+<script src="script.js"></script>
+    </h:body>
+</html>
+

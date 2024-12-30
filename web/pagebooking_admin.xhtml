@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="icon" href="image/ghs.png" />
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+        <script src="https://kit.fontawesome.com/a8a97d8a4d.js" crossorigin="anonymous"></script>
+            
+     <title>Page Booking - GHS Hotel</title>
+    </h:head>
+    <h:body>
+        <!--Navbar-->
+        <nav class="navbar">
+            <h:form>
+                <h:commandLink action="indexadmin" class="logo">
+                     <img src="image/ghs.png" alt="logo store" class="logo"/>
+                </h:commandLink>
+            </h:form>
+            <div>
+                <h:form>
+                    <h:commandLink action="indexadmin" class="nav-item" value="Home"></h:commandLink>
+                    <h:commandLink action="orderdata" class="nav-item" value="Data"></h:commandLink>
+                    <h:commandLink action="index" class="nav-item" value="Log Out" style="margin-right: 64px;"></h:commandLink>
+                </h:form>
+            </div>
+        </nav> 
+        <!--Navbar End-->
+        
+        <!--Form-->
+            <h:form>
+                <div class="border">
+                    <div class="row-2">
+                        <h2>Fill Out The Form</h2>
+                    </div>
+                    <div class="row-3">
+                        <p>Full Name</p>
+                        <h:inputText value="#{orderData.name}" id="fullname" class="form-text"/>
+                    <br/>
+                        <p>Email</p>
+                        <h:inputText value="#{orderData.email}" id="email" class="form-text"/>
+                    <br/>
+                        <p>No Handphone</p>
+                        <h:inputText value="#{orderData.noTelp}" id="age" class="form-text"/>
+                    <br/>
+                        <p>Check In Date</p>
+                        <p:calendar id="startDate" value="#{orderData.checkInDate}">
+                         <p:ajax event="dateSelect"  />
+                        </p:calendar>
+                    <br/>
+                        <p>Check Out Date</p>
+                        <p:calendar id="endDate" value="#{orderData.checkOutDate}">
+                        <p:ajax event="dateSelect"  />
+                        </p:calendar>
+                    <br/>
+                        <p>Payment</p> 
+                        <h:selectOneRadio value="#{orderData.payment}" id="payment" class="form-selected"> 
+                            <f:selectItem itemValue="E-Wallet" itemLabel="E-Wallet" class="container-booking"/>        
+                            <f:selectItem itemValue="Virtual Account" itemLabel="Virtual Account" class="container-booking" />
+                            <f:selectItem itemValue="Convenience Store" itemLabel="Convenience Store" class="container-booking"/> 
+                        </h:selectOneRadio>
+                        <h:message for="payment" style="color:red"/>   
+                    <br/>
+                        <p>Type Room</p> 
+                        <h:selectOneRadio value="#{orderData.typeRoom}" id="type_room" class="form-selected"> 
+                            <f:selectItem itemValue="Standart" itemLabel="Standart" class="container-booking"/>        
+                            <f:selectItem itemValue="Luxury" itemLabel="Luxury" class="container-booking" />
+                            <f:selectItem itemValue="Deluxe" itemLabel="Deluxe" class="container-booking"/> 
+                        </h:selectOneRadio>
+                        <h:message for="payment" style="color:red"/> 
+                    <br/>
+                        <h:commandButton class="bt-submit" value="Submit" action="#{orderData.add_dataorderadmin()}"/>
+                    </div>
+                    
+                    <br/>
+                    <br/>
+                </div>   
+            </h:form>
+            
+            
+            
+         
+        <!--Footer-->
+        <footer>
+            <div class="footerfield">
+                <div class="footer-wrapper">
+                    <h3>ABOUT US</h3>
+                    <p>Check our social media on Facebook, Twitter, and Youtube. 
+                    Don't forget to follow, subscribe, and like our feeds.</p>
+                    <div class= "social-media">
+                        <h:form>
+                            <h:commandLink action="#" class="fab fa-facebook-f"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-twitter"></h:commandLink>
+                            <h:commandLink action="#" class="fab fa-youtube"></h:commandLink>
+                        </h:form>
+                    </div>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>OUR ROOMS</h4>
+                    <h:form>
+                        <h:commandLink action="pagestandart" class="nav-item" value="STANDART"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pagedeluxe" class="nav-item" value="VIP"></h:commandLink>
+                        <br></br>
+                        <h:commandLink action="pageluxury" class="nav-item" value="VVIP"></h:commandLink>
+                    </h:form>
+                </div>
+                <div class="footer-wrapper">
+                    <h4>ABOUT</h4>
+                    <h:form>
+                    <h:commandLink action="#" class="nav-item" value="FAQ"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Get Inspired"></h:commandLink>
+                    <br></br>
+                    <h:commandLink action="#" class="nav-item" value="Blog"></h:commandLink>
+                    </h:form>
+                </div>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>    
+    </h:body>
+</html>
+

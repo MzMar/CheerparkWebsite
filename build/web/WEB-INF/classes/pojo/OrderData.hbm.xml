@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="pojo.OrderData" table="order_data" catalog="barbershop" optimistic-lock="version">
+        
+        <!-- Mapping untuk primary key dengan auto increment -->
+        <id name="orderId" type="java.lang.Integer">
+            <column name="order_id" />
+            <generator class="identity" />
+        </id>
+
+        <!-- Mapping untuk kolom string -->
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+
+        <property name="email" type="string">
+            <column name="email" length="50" not-null="true" />
+        </property>
+
+        <property name="noTelp" type="string">
+            <column name="no_telp" length="50" not-null="true" />
+        </property>
+
+        <!-- Mapping untuk kolom tanggal -->
+        <property name="checkInDate" type="date">
+            <column name="check_in_date" not-null="true" />
+        </property>
+
+        <property name="bookingTime" type="string">
+            <column name="booking_time" not-null="true" />
+        </property>
+
+        <!-- Mapping untuk kolom string lainnya -->
+        <property name="barber" type="string">
+            <column name="barber" length="50" not-null="true" />
+        </property>
+        
+         <property name="paket" type="string">
+            <column name="paket" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
